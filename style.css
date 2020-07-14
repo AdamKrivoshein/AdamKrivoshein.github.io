@@ -1,0 +1,184 @@
+:root {
+  --primary: #114B5F;
+  --secondary: #88D498;
+  --tertiary: #C6DABF;
+  --gray: rgb(210, 210, 210);
+  --transparent: rgba(0, 0, 0, 0.1);
+}
+body {
+  margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #222;
+}
+#navbar {
+  position: fixed;
+  top: 0px;
+  background-color: var(--primary);
+  padding: 5px;
+  width: 100%;
+  z-index: 10;
+}
+#navbar ul {
+  float: left;
+}
+#navbar ul a {
+  text-decoration: none;
+  color: white;
+}
+#navbar ul a:hover {
+  color: var(--secondary);
+  border: 2px;
+}
+.nav-item {
+  display: inline;
+  padding: 20px;
+  font-size: 17px;
+}
+#welcome-section {
+  margin: auto;
+  height: 100vh;
+  padding: 0px 200px 0px 200px;
+  text-align: center;
+  background-color: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+#text-wrap {
+  background-color: rgba(255, 255, 255, 0);
+  margin: auto;
+}
+#welcome-section h1 {
+  padding: 0px;
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 50px;
+}
+#welcome-section p {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+}
+#cover {
+  animation-name: unveil;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  background-color: var(--secondary);
+  height: 75vh;
+  width: 100vw;
+  position: absolute;
+  top: 50vh;
+  left: 60vw;
+  transform: translate(-50%, -50%) skewX(-20deg);
+}
+@keyframes unveil {
+  100% {
+    left: 140vw;
+  }
+}
+#welcome-slant {
+  margin-top: -50px;
+  background-color: var(--primary);
+  height: 100px;
+  transform: skewY(2.5deg);
+}
+#experience-grid {
+  ggbackground: var(--transparent);
+  width: 1000px;
+  margin: -50px auto 100px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+.internship {
+  background: white;
+  padding: 20px;
+  ggmargin: 0px 30px 0px 30px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all .2s ease-in-out;
+}
+.internship ul {
+  text-align: left;
+}
+.internship:hover {
+  animation-name: hightlight-internship;
+  animation-duration: 250ms;
+  animation-fill-mode: forwards;
+  position: relative;
+  ggtop: -10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  ggmargin: -5px 25px 0px 25px;
+}
+@keyframes highlight-internship {
+  100% {
+    background-color: grey;
+  }
+}
+hr {
+  border: 1px solid var(--gray);
+  border-bottom: rgba(0, 0, 0, 0);
+}
+#projects {
+  padding: 50px 200px 100px 200px;
+}
+#projects h2 {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 35px;
+  text-align: center;
+}
+#projects p {
+  font-size: 20px;
+  text-indent: 50px;
+}
+#projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  margin-top: 50px;
+}
+.project-tile {
+  background-color: var(--transparent);
+  border-radius: 10px;
+}
+#footer-slant {
+  margin-bottom: -50px;
+  height: 100px;
+  background-color: var(--tertiary);
+  transform: skewY(-1.5deg);
+}
+footer {
+  background-color: var(--tertiary);
+  height: 160px;
+}
+footer ul {
+  padding-top: 50px;
+  text-align: center;
+}
+footer ul li {
+  display: inline;
+  font-size: 18px;
+}
+footer a {
+  text-decoration: none;
+  color: var(--primary);
+  padding: 10px 20px 10px 20px;
+  margin: 0px 10px 0px 10px;
+  border: 2px solid var(--primary);
+  border-radius: 2em;
+  transition: all .2s ease-in-out;
+}
+footer a:hover {
+  background-color: var(--primary);
+  color: white;
+}
+@media (max-width: 700px) {
+  #navbar ul {
+    float: none;
+  }
+  #navbar ul a {
+    display: block;
+    text-align: center;
+  }
+}
