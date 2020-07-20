@@ -10,6 +10,9 @@ body {
   font-family: 'Ubuntu', sans-serif;
   color: #222;
 }
+p {
+  line-height: 2em;
+}
 #navbar {
   position: fixed;
   top: 0px;
@@ -24,6 +27,7 @@ body {
 #navbar ul a {
   text-decoration: none;
   color: white;
+  transition: all .2s;
 }
 #navbar ul a:hover {
   color: var(--secondary);
@@ -47,6 +51,7 @@ body {
 #text-wrap {
   background-color: rgba(255, 255, 255, 0);
   margin: auto;
+  overflow: hidden;
 }
 #welcome-section h1 {
   padding: 0px;
@@ -62,7 +67,7 @@ body {
   animation-duration: 4s;
   animation-fill-mode: forwards;
   background-color: var(--secondary);
-  height: 75vh;
+  height: 65vh;
   width: 100vw;
   position: absolute;
   top: 50vh;
@@ -74,6 +79,45 @@ body {
     left: 140vw;
   }
 }
+#arrow {
+  background-color: #88A5AF;
+  height: 5px;
+  width: 30px;
+  border-radius: 2em;
+  position: absolute;
+  top: 90vh;
+  left: 50vw;
+  transform:  translateX(-100%) rotate(45deg);
+  animation-name: point-down;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+#arrow::after {
+  background-color: #88A5AF;
+  content: "";
+  height: 5px;
+  width: 30px;
+  border-radius: 2em;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transform:  translate(45%, -255%) rotate(90deg);
+} 
+@keyframes point-down {
+  0% {
+    top: 90vh;
+    opacity: 30%;
+  }
+  50% {
+    top: 94vh;
+    opacity: 100%;
+  }
+  100% {
+    top: 90vh;
+    opacity: 30%;
+  }
+}
 #welcome-slant {
   margin-top: -50px;
   background-color: var(--primary);
@@ -82,7 +126,7 @@ body {
 }
 #experience-grid {
   ggbackground: var(--transparent);
-  width: 1000px;
+  width: 1100px;
   margin: -50px auto 100px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -92,29 +136,41 @@ body {
 }
 .internship {
   background: white;
-  padding: 20px;
-  ggmargin: 0px 30px 0px 30px;
+  padding: 30px;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: all .2s ease-in-out;
 }
-.internship ul {
-  text-align: left;
-}
 .internship:hover {
-  animation-name: hightlight-internship;
-  animation-duration: 250ms;
-  animation-fill-mode: forwards;
-  position: relative;
-  ggtop: -10px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
-  ggmargin: -5px 25px 0px 25px;
+  transform: translateY(-10px);
+  ggposition: relative;
+  ggtop: -10px;
+  ggmargin: -5px -5px 0px -5px;
+  ggpadding: 25px 25px 0px 25px;
 }
 @keyframes highlight-internship {
   100% {
     background-color: grey;
   }
+}
+.logo {
+  width: 50%;
+  margin: 20px 0px 15px 0px;
+}
+.rockwell-logo {
+  width: 70%;
+  margin: 20px 0px 15px 0px;
+}
+.internship h3 {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 20px;
+  color: var(--primary);
+}
+.internship p {
+  line-height: 1.6em;
+  font-size: 18px;
 }
 hr {
   border: 1px solid var(--gray);
@@ -128,9 +184,10 @@ hr {
   font-size: 35px;
   text-align: center;
 }
-#projects p {
+#projects-intro {
   font-size: 20px;
   text-indent: 50px;
+  margin: 0px 200px 0px 200px;
 }
 #projects-grid {
   display: grid;
