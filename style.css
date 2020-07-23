@@ -204,12 +204,12 @@ hr {
 #projects-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 15px;
   margin-top: 50px;
 }
 .project-tile {
   background-color: var(--transparent);
-  border-radius: 10px;
+  border-radius: 8px;
   position: relative;
 }
 #skymonger {
@@ -217,12 +217,15 @@ hr {
 }
 .project-image {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   filter: brightness(.75);
-  transition: all ease-in-out .2s;
+  transition: all ease-in-out .3s;
+}
+#hololens-image {
+  height: 100%;
 }
 .project-image:hover {
-  filter: brightness(.5);
+  filter: brightness(.25);
 }
 .project-description {
   position: absolute;
@@ -230,9 +233,20 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 50%;
+  width: 80%;
   color: white;
-  z-index = 1;
+  line-height: 1.6em;
+  z-index: 1;
+}
+.project-description h3 {
+  font-family: 'Hammersmith One', sans-serif;
+  font-size: 28px;
+}
+.project-description p {
+  line-height: 1.6em;
+}
+#skymonger-description {
+  width: 60%;
 }
 #footer-slant {
   margin-bottom: -50px;
