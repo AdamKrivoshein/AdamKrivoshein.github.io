@@ -187,7 +187,9 @@ hr {
   border-bottom: rgba(0, 0, 0, 0);
 }
 #projects {
-  padding: 50px 200px 100px 200px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 0px 100px 0px;
 }
 #projects h2 {
   font-family: 'Hammersmith One', sans-serif;
@@ -197,7 +199,7 @@ hr {
 #projects-intro {
   font-size: 20px;
   text-indent: 50px;
-  margin: 0px 200px 0px 200px;
+  margin: 0px 100px 0px 100px;
 }
 #projects-grid {
   display: grid;
@@ -208,9 +210,29 @@ hr {
 .project-tile {
   background-color: var(--transparent);
   border-radius: 10px;
+  position: relative;
 }
 #skymonger {
   grid-column: 1 / 3;
+}
+.project-image {
+  width: 100%;
+  border-radius: 10px;
+  filter: brightness(.75);
+  transition: all ease-in-out .2s;
+}
+.project-image:hover {
+  filter: brightness(.5);
+}
+.project-description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 50%;
+  color: white;
+  z-index = 1;
 }
 #footer-slant {
   margin-bottom: -50px;
