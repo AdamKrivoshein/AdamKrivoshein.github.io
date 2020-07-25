@@ -305,12 +305,13 @@ footer a:hover {
     padding: 0px 50px 0px 50px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 845px) {
   #experience-grid {
     width: 340px;
   }
   #projects-grid {
     grid-template-rows: auto;
+    grid-template-columns: 1fr;
     padding: 0px 30px 0px 30px;
   }
   #skymonger {
