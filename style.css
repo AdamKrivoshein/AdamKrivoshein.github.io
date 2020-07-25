@@ -5,6 +5,9 @@
   --gray: rgb(210, 210, 210);
   --transparent: rgba(0, 0, 0, 0.1);
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0px;
   font-family: 'Ubuntu', sans-serif;
@@ -13,6 +16,8 @@ body {
 p {
   line-height: 2em;
 }
+
+/* Nav Section */
 #navbar {
   position: fixed;
   top: 0px;
@@ -38,10 +43,11 @@ p {
   padding: 20px;
   font-size: 17px;
 }
+
+/* Welcome Section */
 #welcome-section {
   position: relative;
   height: 100vh;
-  padding: 0px 200px 0px 200px;
   text-align: center;
   background-color: var(--primary);
   color: white;
@@ -76,7 +82,7 @@ p {
 }
 @keyframes unveil {
   100% {
-    left: 140vw;
+    left: 145vw;
   }
 }
 #arrow {
@@ -124,6 +130,8 @@ p {
   height: 200px;
   transform: skewY(3deg);
 }
+
+/* Experience Section */
 #experience-grid {
   ggbackground: var(--transparent);
   max-width: 1100px;
@@ -133,16 +141,6 @@ p {
   grid-gap: 40px;
   position: relative;
   z-index: 1;
-}
-@media (max-width: 1200px) {
-  #experience-grid {
-    width: 720px;
-  }
-}
-@media (max-width: 820px) {
-  #experience-grid {
-    width: 340px;
-  }
 }
 .internship {
   background: white;
@@ -186,8 +184,10 @@ hr {
   border: 1px solid var(--gray);
   border-bottom: rgba(0, 0, 0, 0);
 }
+
+/* Projects Section */
 #projects {
-  max-width: 1100px;
+  max-width: 1101px;
   margin: auto;
   padding: 50px 0px 100px 0px;
 }
@@ -203,7 +203,7 @@ hr {
 }
 #projects-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(357px, 1fr));
   grid-template-rows: 400px 200px;
   grid-gap: 15px;
   margin-top: 50px;
@@ -253,6 +253,8 @@ hr {
 #skymonger-description {
   width: 60%;
 }
+
+/* Footer Section */
 #footer-slant {
   margin-bottom: -50px;
   height: 100px;
@@ -284,7 +286,9 @@ footer a:hover {
   background-color: var(--primary);
   color: white;
 }
-@media (max-width: 700px) {
+
+/* Miscellaneous
+/*@media (max-width: 700px) {
   #navbar ul {
     float: none;
   }
@@ -292,4 +296,25 @@ footer a:hover {
     display: block;
     text-align: center;
   }
+}*/
+@media (max-width: 1200px) {
+  #experience-grid {
+    width: 720px;
+  }
+  #projects-grid {
+    padding: 0px 50px 0px 50px;
+  }
 }
+@media (max-width: 800px) {
+  #experience-grid {
+    width: 340px;
+  }
+  #projects-grid {
+    grid-template-rows: auto;
+    padding: 0px 30px 0px 30px;
+  }
+  #skymonger {
+    grid-column: 1 / 2;
+  }
+}
+@media ()
